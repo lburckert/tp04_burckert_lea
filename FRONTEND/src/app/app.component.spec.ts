@@ -19,13 +19,13 @@ describe('AppComponent', () => {
   it(`should have as title 'tp02-burckert-lea'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('tp02-burckert-lea');
+    expect(app.title).toEqual('tp04-burckert-lea');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('tp02-burckert-lea app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('tp04-burckert-lea app is running!');
   });
 });

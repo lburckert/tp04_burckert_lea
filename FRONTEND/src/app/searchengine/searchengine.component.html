@@ -1,24 +1,42 @@
-<div class="container">
-    <div class="d-flex bd-highlight">
-        <div class="p-2 bd-highlight">
-            <label for="brand">Brand : </label>
-            <select name="brand" class="ms-2 p-1" [(ngModel)]="brand">
-                <option value="all" selected>All</option>
-                <option value="DC Comics">DC Comics</option>
-                <option value="Warner Bros">Warner Bros</option>
-            </select>
+<!-- FILTRE DEPLACE DANS LE COMPOSANT PRODUCT
+    
+    
+    
+    
+    
+    <div class="container">
+        <div class="card-body">
+            <div class="row">
+                <div class="pt-2 col text-center">
+                    <label for="product-name">Nom du produit</label>
+                </div>
+                <div class="pt-2 col text-center">
+                    <label for="minPrice">Prix minimum</label>
+                </div>
+                <div class="pt-2 col text-center">
+                    <label for="maxPrice">Prix maximum</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="pb-3 col text-center">
+                    <input name="product-name" type="text" [formControl]="productName">
+                </div>
+                <div class="pb-3 col text-center">
+                    <input name="minPrice" type="number" [formControl]="productMinPrice">
+                </div>
+                <div class="pb-3 col text-center center-align">
+                    <input name="maxPrice" type="number" [formControl]="productMaxPrice">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col text-center">
+                    <button class="btn btn-primary ms-auto p-2 bd-highlight" (click)="OnValidateButtonClick()">Apply filters</button>
+                </div>
+                <div class="col text-center">
+                    <button class="btn btn-secondary" (click)="OnResetButtonClick()">Réinitialiser la saisie</button>
+                </div>
+            </div>
         </div>
-        <div class="p-2 bd-highlight">
-            <label for="height">Height : </label>
-            <select name="height" class="ms-2 p-1" [(ngModel)]="height">
-                <option value="all">All</option>
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-            </select>
-        </div>
-        <button class="btn btn-primary ms-auto p-2 bd-highlight"(click)="apply()">Apply filters</button>
-    </div>
-</div>
+    </div> 
+
+</div>-->

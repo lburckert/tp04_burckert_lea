@@ -1,6 +1,32 @@
 <header class="container">
     <h1>DC.Comics</h1>
-    <h2>User registration</h2>
+
+    <div class='navbar navbar-fixed-top'>
+        <nav class='navbar-inner header'>
+            <ul class='nav pull-right'>
+                <li>
+                    <a class='nav-link' [routerLink]="['/home']">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a class='nav-link' [routerLink]="['/clientAccount']">
+                        Client Account
+                    </a>
+                </li>
+                <li>
+                    <a class='nav-link' [routerLink]="['/catalog']">
+                        Catalog
+                    </a>
+                </li>
+                <li>
+                    <a class='nav-link' [routerLink]="['/cart']">
+                        Cart<span class='badge badge-warning' id='lblCartCount'>{{ nbPanier$ | async }}</span>
+                    </a>                    
+                </li>  
+            </ul>
+        </nav>
+    </div>
 </header>
 
 

@@ -9,17 +9,18 @@ export class RecapComponent implements OnInit {
 
   constructor() { }
 
+  @Input() firstname : string = "none";
+  @Input() lastname : string = "none";
+  @Input() username : string = "none";
+  @Input() civility : string = "none";
+  @Input() address : string = "none";
+  @Input() city : string = "none";
+  @Input() zip : string = "none";
+  @Input() state : string = "none";
+  @Input() email : string = "none";
+  @Input() phone : string = "none";
+
+
   ngOnInit(): void {
   }
-
-  @Input() firstname: string = "name";
-  @Input() lastname: string = "name";
-  @Input() username: string = "name";
-  @Input() civility: string = "name";
-  @Input() email: string = "name";
-  @Input() phone: string = "name";
-  @Input() address: string = "name";
-  @Input() city: string = "name";
-  @Input() state: string = "name";
-  @Input() zip: string = "name";
 }

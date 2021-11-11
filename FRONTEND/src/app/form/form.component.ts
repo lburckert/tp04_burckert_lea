@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl, Valid
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  form!: FormGroup;
+  /* form!: FormGroup;
 
   recapdisable: boolean = true;
 
@@ -85,4 +85,88 @@ export class FormComponent implements OnInit {
   get email() { return this.form.get("email"); }
   get password() { return this.form.get("password"); }
   get confirmpassword() { return this.form.get("confirmpassword"); }
+ */
+
+  recapdesable : boolean = true;
+  
+  lastname : string = "";
+  firstname : string = "";
+  username : string = "";
+  civility : string = "";
+  address : string = "";
+  city : string = "";
+  zip : string = "";
+  state : string = "";
+  email : string = "";
+  phone : string = "";
+  password : string = "";
+  confirmPassword : string = "";
+
+  validForm : boolean = true;
+  validLastname : boolean = true;
+  validFirstname : boolean = true;
+  validUsername : boolean = true;
+  validCivility : boolean = true;
+  validAddress : boolean = true;
+  validCity : boolean = true;
+  validZip : boolean = true;
+  validState : boolean = true;
+  validEmail : boolean = true;
+  validPhone : boolean = true;
+  validPassword : boolean = true;
+  validConfirmPassword : boolean = true;
+
+  regexFirstnameLastnameCity : RegExp = new RegExp("^[A-Za-zÀ-ÖØ-öø-ÿ\-]+$");
+  regexAddress : RegExp = new RegExp("^[0-9]{1,3}[\\s].[\\sA-Za-zÀ-ÖØ-öø-ÿ\-\']+$");
+  regexZip : RegExp = new RegExp("^[0-9]{5}$");
+  regexEmail : RegExp = new RegExp("^[A-Za-zÀ-ÖØ-öø-ÿ\-\.]+@[A-Za-zÀ-ÖØ-öø-ÿ\-\.]+[\.].[A-Za-z]+$");
+  regexPhone : RegExp = new RegExp("^([0-9]{2}){5}$");
+  regexUsername : RegExp = new RegExp("^[A-Za-zÀ-ÖØ-öø-ÿ0-9]+$");
+  regexPassword : RegExp = new RegExp("^[\\S]+$");
+
+  onSubmit() : void {
+    this.validLastname = this.validateInput(this.lastname, this.regexFirstnameLastnameCity);
+    this.validFirstname = this.validateInput(this.firstname, this.regexFirstnameLastnameCity);
+    this.validUsername = this.validateInput(this.username, this.regexFirstnameLastnameCity);
+    this.validCivility = this.validateDropDownSelection(this.civility);
+    this.validAddress = this.validateInput(this.address, this.regexAddress);
+    this.validCity = this.validateInput(this.city, this.regexFirstnameLastnameCity);
+    this.validZip = this.validateInput(this.zip, this.regexZip);
+    this.validState = this.validateDropDownSelection(this.state);
+    this.validEmail = this.validateInput(this.email, this.regexEmail);
+    this.validPhone = this.validateInput(this.phone, this.regexPhone);
+    this.validPassword = this.validateInput(this.password, this.regexPassword);
+    this.validConfirmPassword = this.validatePasswordMatch(this.password, this.confirmPassword);
+    this.recapdesable = false;
+  }
+
+  ngOnInit(): void {
+  }
+
+  validateInput(input : string, regex : RegExp) : boolean {
+    if(! regex.test(input)) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+  validateDropDownSelection(selection : string) : boolean {
+    if(selection == "") {
+      return false;
+    }
+    else {
+      return true;
+    }    
+  }
+
+  validatePasswordMatch(passwordInput : string, confirmPasswordInput : string) : boolean {
+    if(passwordInput != confirmPasswordInput) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
 }
